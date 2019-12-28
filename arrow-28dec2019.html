@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrow function</title>
+</head>
+<body>
+
+	<script>
+		
+		// function ask(question, yes, no) {
+		//   if (confirm(question)) yes()
+		//   else no();
+		// }
+
+		// ask(
+		//   "Do you agree?",
+		//   function() { alert("You agreed."); },
+		//   function() { alert("You canceled the execution."); }
+		// );
+
+		var ask2 = (q,y,n) => confirm(q) ? y() : n();
+		ask2('are you sure?',() => alert('yes'), () => alert('no') );
+
+	</script>
+	
+</body>
+</html>

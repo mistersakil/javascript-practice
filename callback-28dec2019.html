@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>callback</title>
+</head>
+<body>
+<script>
+	function load_website(src, callback){
+		var frame = document.createElement('iframe');
+		frame.src = src;
+		frame.onload = () => callback(frame);
+		document.body.appendChild(frame); 		
+		
+	}
+	load_website("https://www.bdjobs.com", function(frame){
+		console.log(frame.src + " - loaded successfully");
+		load_website("https://api.jquery.com", function(frame){
+			console.log(frame.src + " - loaded successfully");
+		});
+	});
+</script>
+	
+	
+</body>
+</html>
