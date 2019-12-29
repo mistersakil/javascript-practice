@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callback</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		/* simple basic callback function */
+		let calc = function(num1, num2, callback){
+			return typeof callback === 'function' ? callback(num1, num2) : 'Third argument should be a valid function';
+		}
+
+		let sum = calc(2,5,(n1,n2) => {return n1 + n2} );
+		let mul = calc(2,5,(n1,n2) => {return n1 * n2} );
+		let sub = calc(2,5,(n1,n2) => {return n2 - n1} );
+		console.log(sub);
+
+
+
+	</script>
+	
+</body>
+</html>

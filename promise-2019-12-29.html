@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		/* basic promise */
+
+		// let promiseToClean = new Promise((resolve, reject) => {
+
+		// 	let isClean = false;
+
+		// 	if(isClean){
+		// 		resolve('Cleaned');
+		// 	}else{
+		// 		reject('Not cleaned');
+		// 	}
+
+		// });
+		// promiseToClean.then(resolveData => console.log('Room is : ' + resolveData)).catch(rejectData => console.log('Room is: '+ rejectData));
+
+		/***** promise in short *****/
+
+		// new Promise((resolve, reject) => {false ? resolve('Cleaned') : reject('Not cleaned')})
+		// .then(resolveData => console.log('Room is : ' + resolveData))
+		// .catch(rejectData => console.log('Room is: '+ rejectData));
+
+		/***** complex promise example *****/
+
+		let promiseToCleanRoom = function(){
+			return new Promise((resolve, reject) => {
+				let isClean = true;
+				isClean ? resolve(isClean) : reject(isClean);
+			});
+		};
+
+		let promiseToRemoveGarbage = function(msg){
+			return new Promise((resolve, reject) => {
+				msg ? resolve(msg) : reject(msg);
+			});
+		};
+
+		let winGift = function(){
+			return new Promise((resolve, reject) => {
+				resolve();
+			});
+		};
+/*
+		promiseToCleanRoom().then(resolveData => {
+			return promiseToRemoveGarbage(true);
+		}).then(resolveData => {
+			return winGift();
+		}).then(resolveData => {
+			console.log('won gift');
+		}).catch(rejectData => {
+			console.log('just thanks, no gift');
+		});
+
+
+
+
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
