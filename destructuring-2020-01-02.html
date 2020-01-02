@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rest and spread operator</title>
+</head>
+<body>
+
+	<script>
+		
+		/* destructuring array */
+
+		const ar = [1,23,432, 534, 4345];
+		
+		let [a,b,,,c] = ar;
+
+		console.log(a);
+		console.log(b);
+		console.log(c);
+
+		/* destructuring object */
+		{
+			let name = 'sakil mahmud';
+			let email = 'sakilorb@gmail.com';
+			var obj = {
+				name,
+				email,
+				age : 23
+			};
+		}
+
+
+
+		let {name,email} = obj;
+		// console.log(name);
+		// console.log(email);
+
+
+		/* destructuring object as function argument */
+
+		let de = function({name, email}){
+			console.log(`Name = ${name} and email: ${email}`);
+		}
+
+		de({email, name});
+		
+		
+
+
+
+	</script>
+	
+</body>
+</html>

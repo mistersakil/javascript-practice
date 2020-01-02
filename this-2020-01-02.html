@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lexical this</title>
+</head>
+<body>
+
+	<script>
+		
+		/* when this is global object */
+
+		// console.log(this);  
+
+		let person = {
+			name: 'sakil',
+			age: 31,
+			email: 'sakil@gmail.com',
+			details(){
+				setTimeout(function(){
+					console.log(this);
+				}.bind(this),1000)
+			}
+		}
+		let persons = {
+			name: 'sakil',
+			age: 31,
+			email: 'sakil@gmail.com',
+			details(){
+				setTimeout(() => console.log(this.name),1000)
+			}
+		}
+		person.details();
+		persons.details();
+
+
+
+	</script>
+	
+</body>
+</html>
