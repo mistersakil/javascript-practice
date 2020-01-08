@@ -5,10 +5,11 @@
 	<title>Lexical this</title>
 </head>
 <body>
+	<h2>Javascript this keyword</h2>
 
 	<script>
 		
-		/* when this is global object */
+		/* when this is global object then bind*/
 
 		// console.log(this);  
 
@@ -22,12 +23,13 @@
 				}.bind(this),1000)
 			}
 		}
+		/* when this is global object then use arrow function */
 		let persons = {
 			name: 'sakil',
 			age: 31,
 			email: 'sakil@gmail.com',
 			details(){
-				setTimeout(() => console.log(this.name),1000)
+				setTimeout(() => console.log(this),1000)
 			}
 		}
 		person.details();
