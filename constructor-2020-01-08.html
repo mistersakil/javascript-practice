@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>constructor function</title>
+</head>
+<body>
+<h1>constructor function: please console.log</h1>
+	<script>
+		/* constructor function */
+		function Person({name, email, age, address, language}){
+			this.name = name;
+			this.email = email;
+			this.age = age;
+			this.address = address;
+			this.language = language;
+		}
+		/* object declaration with constructor function */
+		let p1 = new Person({name: 'sakil', language: 'bangla', age:31, email: 'sakilobr@gmail.com', address: 'Dhaka'});
+		let p2 = new Person({name: 'rasel', language: 'bangla', age:32, email: 'rasel@gmail.com', address: 'pirojpur'});
+		let p3 = p2;
+		p3.name = 'Rasel jomadder';
+		// console.log(p1);
+
+		/* Prototyping a method for Person constructor into global prototype object */
+		Person.prototype.bio = function() {
+			console.log(`Name: ${this.name}, email: ${this.email}, age: ${this.age}, address: ${this.address} and language: ${this.language} `);
+		}
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>

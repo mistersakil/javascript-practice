@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototype</title>
+</head>
+<body>
+<h1>Prototype: please console.log</h1>
+	<script>
+		
+		function Person(name){
+			this.name = name;
+			this.info = () => 'My name is: ' + name;
+		}
+
+		function Student(name, id){
+			Person.call(this, name);
+			this.id = id;
+		}
+		Person.prototype.greet = function(greet) {			
+			console.log(greet+ ' : ' + this.name);
+		};
+
+		Student.prototype = Object.create(Person.prototype);
+		Student.prototype.constructor = Student;
+
+		let s1 = new Student('sakil', 31);
+		let s2 = new Student('rasel', 32);
+		// p1.greet('Hello ');
+		// console.log(p1 instanceof Student);
+		// console.log(s1.info());
+		// console.log(s1.id);
+		// s2.greet('hi');
+
+		console.log(s2 instanceof Person);
+		console.log(s1 instanceof Student);
+
+
+	</script>
+	
+</body>
+</html>

@@ -9,10 +9,60 @@
 
 	<script type="text/javascript">
 		
+	// in general function this keyword refers to window/global object
 	function obj(){
-		console.log('object initiated');
+		console.log(this);
 	}
-	new obj;
+	
+	// obj(); // return window object
+
+	// new obj(); // return premitive object {}
+
+	function book(name, page){
+		
+		return console.log(`book name: ${this.name} and page : ${this.page}`);
+		
+	}
+
+	// let book1 = book.bind({name:'php', page: 200});
+	// book1();
+	
+	/*  Create an object:  */
+	function lang(){
+		return this.language;
+	}
+	var person = {
+	  firstName: "John",
+	  lastName : "Doe",
+	  language : "en",
+	  bio : function(){
+	  	console.log(`${this.firstName} ${this.lastName} and language is ${this.language}`);
+	  },
+	  fullname : () => {
+	  	console.log(`${this.firstName} ${this.lastName}`);	  	
+	  }
+	};
+
+	let lan = lang.bind(person);
+
+	let books = new Object();
+	books.name = 'php';
+	books.info = () => {
+		return this;
+	};
+
+	var obj2 = new obj();
+
+	const obj3 = () => console.log(this);;
+
+	// let obj4 = new obj3();
+	obj3();
+
+
+
+
+
+
 
 
 	</script>
