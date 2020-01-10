@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closure</title>
+</head>
+<body>
+	<h1>Closure</h1>
+
+
+	<script type="text/javascript">
+	
+	let place = 'Dhaka';
+	function name(names){
+		
+		return function inner(age){
+			console.log(`I am - ${names} and age is ${age} and lives in: ${place}`);
+		}
+	}
+
+	let sakil = name('sakil');
+	let rasel = name('rasel');
+	sakil(31);
+	rasel(33);
+	console.dir(sakil);
+	console.dir(rasel);
+
+
+
+	</script>
+
+</body>
+</html>
