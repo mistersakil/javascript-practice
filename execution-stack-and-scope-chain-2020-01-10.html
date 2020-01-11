@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Execution stack and scope chain</title>
+</head>
+<body>
+	<h1>Execution stack and scope chain</h1>
+
+
+	<script type="text/javascript">
+
+
+		let a = 1;
+		A();
+		function A(){
+			var b = 2;
+			console.log(`A scope ${a}`);
+			B();
+			function B(){
+				console.log(`B scope a=${a}, b=${b}`);
+
+				let c = 3;
+				C();
+				function C(){
+					let d = 4;
+					console.log(`C scope a=${a}, b=${b} , c=${c}`);
+					D(b,c,d);
+				}
+			}
+		}
+
+
+		function D(b,c,d){
+			console.log(`C scope a=${a}, b=${b} , c=${c} , d = ${d}`);
+
+		}
+
+
+
+	</script>
+
+</body>
+</html>
