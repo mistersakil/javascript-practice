@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bootstrap Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		
+	</head>
+	<body>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '481733455819262',
+		      cookie     : true,
+		      xfbml      : true,
+		      version    : 'v5.0'
+		    });
+		      
+		    FB.getLoginStatus(function(response) {
+			    statusChangeCallback(response);
+			    console.log(response);
+			}); 
+
+		      
+		  };
+
+		   
+
+		    function statusChangeCallback(response){
+	    		
+		    	if(response.status === "connected"){
+		    		console.log("connected");
+		    		setElement(true)
+		    	}else{
+		    		console.log("not connected");	
+		    		setElement(false);
+		    	}
+		    }
+		    
+		    function setElement(isLoggedIn){
+		        let login_btn = document.getElementById('login_btn');
+	    		let logout_btn = document.getElementById('logout_btn');
+	    		if(isLoggedIn){
+		    		login_btn.style.display = 'none';
+		    	}else{		    		
+		    		login_btn.style.visibility = 'block';
+		    	}
+		    	logout_btn.addEventListener('click',(e) => {
+		    	    e.preventDefault();
+		    	    console.log('logout');
+		    	    FB.logout();
+		    	    setElement(false);
+		    	});
+		    }
+
+		    function checkLoginState() {
+				FB.getLoginStatus(function(response) {
+					statusChangeCallback(response);
+				});
+			}
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); 
+		     js.id = id;
+		     js.src = "https://connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		   
+		   
+		</script>
+
+
+		<div class="container">
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">WebSiteName</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href=""  id="logout_btn"><span class="glyphicon glyphicon-user"></span> Logout</a>
+					</li>
+					<li>
+						<!-- <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a> -->
+						<fb:login-button 
+						  id="login_btn"
+						  scope="public_profile,email"
+						  onlogin="checkLoginState();">
+						</fb:login-button>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="container">
+			<h3>Right Aligned Navbar</h3>
+			<p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+		
+	</body>
+</html>
