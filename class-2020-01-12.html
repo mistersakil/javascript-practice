@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class</title>
+</head>
+<body>
+	<h2>Class</h2>
+
+	<script>
+		/* Basic class example */
+		class Person{
+			constructor(name){
+				this.name = name;
+			}
+			details(){
+				return 'Hello ' + this.name;
+			}
+			static hi(obj){
+				console.log(obj.details());
+			}
+			type(){
+
+			}
+
+		}
+
+		let sakil = new Person('Sakil mahmud');
+		// sakil.details();
+
+		/* use of static keyword */
+		// Person.hi(sakil);
+
+		/* Inheritance */
+
+		class Passenger{
+			constructor(name){
+				this.name = name;
+			}
+			details(){
+				return `my name is : ${this.name}`;
+			}
+		}
+
+		class Type extends Passenger{
+			constructor({name, type}){
+				super(name);
+				this.type = type;
+			}
+
+			types(){
+				console.log(`${this.details()}  and i'm a : ${this.type}`);
+			}
+
+
+		}
+
+
+		const obj = {name: 'rasel mahmud', type: 'general passengers'};
+		let rasel = new Type(obj);
+		// rasel.types();
+		const obj2 = {name: 'monir mahmud', type: 'vip passengers'};
+		let monir = new Type(obj2);
+		// monir.types();
+		const obj3 = {name: 'sakil mahmud', type: 'student passengers'};
+		let sakil2 = new Type(obj3);
+		// sakil2.types();
+
+		/* Getters and setters */
+		// let banana = new Fruit();
+		class Fruit{
+			set name(name){
+				this._name = name.toUpperCase();
+			}
+			get name(){
+				return this._name;
+			}
+		}
+
+		let apple = new Fruit();
+		apple.name = "Apple";
+		// console.log(apple.name);
+
+
+
+		
+
+
+	</script>
+	
+</body>
+</html>
