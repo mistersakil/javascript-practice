@@ -1,12 +1,11 @@
 {
-  "name": "nodejs",
+  "name": "node12",
   "version": "1.0.0",
-  "description": "nodejs mysql practice",
-  "main": "app.js",
+  "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "sakilorb@gmail.com",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "upper-case": "^2.0.1"
