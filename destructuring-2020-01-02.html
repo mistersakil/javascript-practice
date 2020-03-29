@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Rest and spread operator</title>
+	<title>Destructuring JS Array and Object</title>
 </head>
 <body>
-
+	<h2>Destructuring JS Array and Object</h2>
 	<script>
 		
 		/* destructuring array */
@@ -20,31 +20,50 @@
 
 		/* destructuring object */
 		{
-			let name = 'sakil mahmud';
-			let email = 'sakilorb@gmail.com';
+			let names = 'sakil mahmud';
+			let emails = 'sakilorb@gmail.com';
 			var obj = {
-				name,
-				email,
+				emails,
+				names : 'john doe',
 				age : 23
 			};
 		}
 
 
 
-		let {name,email} = obj;
-		// console.log(name);
-		// console.log(email);
+		let {names,emails} = obj;
+		console.log(names);
+		console.log(emails);
 
 
 		/* destructuring object as function argument */
 
-		let de = function({name, email}){
-			console.log(`Name = ${name} and email: ${email}`);
+		let de = function({names:myname, emails:myemail}){
+			console.log(`Name = ${myname} and email: ${emails}`);
 		}
 
-		de({email, name});
-		
-		
+		de({emails, names});
+
+		/* avaScript Program to Swap Two Numbers without using Third Variable , 28 march 2020 */
+
+		var p = 12
+		var q = 13
+
+		var [p,q] = [q,p]
+
+		console.log(`value of p = ${p} and value of q = ${q}`)
+
+		/* destructuring object , 28 march 2020 */
+		const car = {
+			brand: 'Toyota',
+			model: 'Allion A15',
+			year: 2009,
+			color: ['darkred', 'pure white', 'light grey']
+		}
+		let {brand,model,year,color} = car
+		let [red,white,grey] = color 
+
+		console.log(`My car brand is ${brand}, Model is ${model} and color is ${white}`)
 
 
 

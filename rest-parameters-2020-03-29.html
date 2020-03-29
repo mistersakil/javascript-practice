@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rest Parameters</title>
+</head>
+<body>
+	<h1>Rest Parameters</h1>
+
+
+	<script>
+		/* Rest parameters basic example */
+		// function rest(...params){
+		// 	console.log(params)
+		// 	let total = 0;
+		// 	for(let i of params){
+		// 		total += i
+		// 	}
+		// 	console.log(total)
+		// }
+		// rest(1,2,3,4,5)
+
+		/* Rest parameters on callback */
+
+		function rest2(...params){
+			
+			let numbers = []
+			for (let i of params){
+				if(typeof i === 'function'){
+					i(numbers)
+				}else{
+					numbers.push(i)		
+				}
+
+			}
+		}
+
+		rest2(1,2,3,4,5,6,100, func)
+
+		function func(data){
+			let sum = data.reduce((total,value) => total + value, 0)
+			console.log(sum)
+		}
+
+		rest2(1,2,3,4,5,6,100, funcm)
+
+		function funcm(data){
+			let mul = data.reduce((total,value) => total * value)
+			console.log(mul)
+		}
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

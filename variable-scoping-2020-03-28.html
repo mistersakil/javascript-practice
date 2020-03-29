@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vabiable scoping</title>
+</head>
+<body>
+	<h1>Vabiable scoping</h1>
+
+
+	<script>
+
+	let a = "global scope"
+
+	if(true){
+		const a = "block scope"
+		// var a = "global scope"
+		console.log(a)
+	}
+
+	console.log(a)
+
+
+
+
+	</script>
+
+</body>
+</html>
