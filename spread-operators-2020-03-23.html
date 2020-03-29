@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spread Operators</title>
+</head>
+<body>
+	<h1>Spread Operators</h1>
+
+
+	<script>
+
+	// let a = 10
+	// let b = a
+	// b = 5
+	// let ar1= [1,2,3,]
+	// let ar2 = ar1
+	// ar2.push(4,5)
+	// console.log(a,b)
+	// console.log(ar1,ar2)
+
+	/* spread operators for copying array values and concate arrays */
+
+	let ar1 = [1,2,3]
+	let ar3 = [4,5,6]
+	let ar2 = [...ar1, ...ar3, 7,8,9]
+	// console.log(ar2)
+
+	/* spread operators on function with rest operators */
+
+	let sum = (a,b,...rest) => {
+		let ar5 = [a,b,...rest];
+		let result = ar5.reduce((a,b) => a+b);
+		console.log(result)
+	}
+	let ar4 = [1,2,3,4,5,6]
+	sum(...ar4)
+
+
+
+
+	</script>
+
+</body>
+</html>
