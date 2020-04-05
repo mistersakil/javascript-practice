@@ -6,6 +6,8 @@ import MyEventsFunction from './Components/MyEvents/MyEventsFunction'
 import MyStates from './Components/MyStates/MyStates'
 import MyStudents from './Components/MyStudents/MyStudents'
 import MyHooks from './Components/MyHooks/MyHooks'
+import MyUseEffect from './Components/MyHooks/MyUseEffect'
+import MyCustomHooks from './Components/MyHooks/MyCustomHooks'
 
 export default class App extends React.Component {
   constructor(props){
@@ -25,12 +27,14 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <h1 className="title">{this.state.heading}</h1>      
-        <MyHooks title="MY Hooks - useState()"/>
-        <MyStudents title="MY Students"/>
-        <Users>My Users</Users>
-        <MyStates name="MyStates Title" />
+        <MyCustomHooks title="Hooks - useHookForCounter()"/>
+        <MyUseEffect title="Hooks - useEffect()"/>
+        <MyHooks title="Hooks - useState()"/>
+        <MyStudents title="Students"/>
+        <Users>Users</Users>
+        <MyStates name="States Title" />
         <MyEventsFunction name="Funtional Event" />
-        <MyEventsClass name="MyEvents 1" age="31" />
+        <MyEventsClass name="Events 1" age="31" />
       </div>
     );
   }
