@@ -8,6 +8,7 @@ import MyStudents from './Components/MyStudents/MyStudents'
 import MyHooks from './Components/MyHooks/MyHooks'
 import MyUseEffect from './Components/MyHooks/MyUseEffect'
 import MyCustomHooks from './Components/MyHooks/MyCustomHooks'
+import MyLists from './Components/MyLists/MyLists'
 
 export default class App extends React.Component {
   constructor(props){
@@ -27,6 +28,7 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <h1 className="title">{this.state.heading}</h1>      
+        <MyLists title="Lists"/>
         <MyCustomHooks title="Hooks - useHookForCounter()"/>
         <MyUseEffect title="Hooks - useEffect()"/>
         <MyHooks title="Hooks - useState()"/>
