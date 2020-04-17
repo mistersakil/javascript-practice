@@ -10,4 +10,7 @@
 
 * git remote add origin https://github.com/mistersakil/sakil-javascript-practice
 
+## Some other GIT commands
 
+* Change Git Remote URL => git remote set-url https://github.com/mistersakil/sakil-javascript-practice
+* Check repository => git remote -v
