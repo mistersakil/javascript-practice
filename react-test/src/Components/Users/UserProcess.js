@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Guest from './Guest'
 import Registered from './Registered'
-import '../../App.css'
+
 
 function UserProcess(props){
 	const [heading, setHeading] = useState(props.title)

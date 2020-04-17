@@ -12,7 +12,7 @@
 }
 .block{
   width: 30%;
-  height: 17vh;
+  min-height: 17vh;
   padding: 25px 0;
   background-color: pink;
   text-align: center;
@@ -28,3 +28,29 @@
   padding: 10px 0;
   text-decoration: underline;
 }
+
+.timerBlock{  
+  background: lightgreen;
+  padding: 30px 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.timerBlock button{  
+  padding: 0 10px;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+input, select, textarea{
+  width: 90%;
+  margin: 5px auto;
+  border: 1px solid green;
+  box-shadow: none;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+input[type="radio"],input[type="checkbox"]{
+  width: auto;
+}
+

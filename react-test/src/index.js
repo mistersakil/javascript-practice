@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import UserProcess from './Components/Users/UserProcess'
-import App from './App'
+// import App from './App'
+// import Tables from './Components/Tables/Tables'
+// import TableAndForm from './Components/Tables/TableAndForm'
+import Routing from './Components/Routing/Routing'
 
-ReactDOM.render(<App title="My Dear React" />, document.getElementById('root'));
+ReactDOM.render(<Routing />, document.getElementById('root'));
