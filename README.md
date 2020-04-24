@@ -1,16 +1,11 @@
 ## Sakil Javascript Practice
 
-## Connect existing repository to Bitbucket
+## Few Git Commands
 
-* git remote add origin https://sakilorb@bitbucket.org/sakil-practice-team/sakil-javascript-practice.git
-* git remote add origin https://github.com/mistersakil/sakil-javascript-practice
-* git push -u origin master
-
-## Git remote orgin url chaged bitbucket to github
-
-* git remote add origin https://github.com/mistersakil/sakil-javascript-practice
-
-## Some other GIT commands
-
+* Adding on local change: git add . or git add hello.text
+* Commit on local change: git commit -m "added hello.text" 
+* Git pull from live : git pull 
+* Push to live repo: git push or git push -u origin master
+* Add remote origin of an local repo: git remote add origin https://github.com/mistersakil/sakil-javascript-practice
 * Change Git Remote URL => git remote set-url https://github.com/mistersakil/sakil-javascript-practice
-* Check repository => git remote -v
+* Check Git Remote URL => git remote -v
