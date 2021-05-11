@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "underscore": "^1.9.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "gulp": "^4.0.2"
