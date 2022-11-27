@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * customDateTimeFormat format custom date and time
+       * @param {type}
+       * @return string [date or time]
+       */
+      function customDateTimeFormat(type = "date") {
+        let d = new Date();
+        /* Time format */
+        let year = new Intl.DateTimeFormat("en", { year: "numeric" }).format(d);
+        let month = new Intl.DateTimeFormat("en", { month: "short" }).format(d);
+        let date = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(d);
+        const formattedDate = `${date} ${month}, ${year}`;
+        /* Time format */
+        let hour = new Intl.DateTimeFormat("en", {
+          hour12: true,
+          hour: "numeric",
+          minute: "2-digit",
+        }).format(d);
+        const formattedTime = `${hour}`;
+        return type == "date" ? formattedDate : formattedTime;
+      }
+    </script>
+  </body>
+</html>
